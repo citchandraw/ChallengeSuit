@@ -15,84 +15,90 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/text_gunting_kertas_batu" />
+        app:srcCompat="@drawable/textguntingkertasbatu" />
 
     <ImageView
         android:id="@+id/view_batu1"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginBottom="332dp"
+        android:background="@drawable/ic_batu"
+        android:foreground="?android:attr/selectableItemBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.096"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view_judul"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/ic_batu" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/view_kertas1"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginBottom="232dp"
+        android:background="@drawable/ic_kertas1"
+        android:foreground="?android:attr/selectableItemBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.096"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view_batu1"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/ic_kertas1" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/view_gunting1"
         android:layout_width="80dp"
         android:layout_height="80dp"
+        android:background="@drawable/ic_gunting1"
+        android:foreground="?android:attr/selectableItemBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.096"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view_kertas1"
-        app:layout_constraintVertical_bias="0.118"
-        app:srcCompat="@drawable/ic_gunting1" />
+        app:layout_constraintVertical_bias="0.118" />
 
     <ImageView
         android:id="@+id/view_batu2"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginBottom="332dp"
+        android:background="@drawable/ic_batu"
+        android:foreground="?android:attr/selectableItemBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.912"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view_judul"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/ic_batu" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/view_kertas2"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginBottom="232dp"
+        android:background="@drawable/ic_kertas1"
+        android:foreground="?android:attr/selectableItemBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.912"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view_batu2"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/ic_kertas1" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/view_gunting2"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginBottom="120dp"
+        android:background="@drawable/ic_gunting1"
+        android:foreground="?android:attr/selectableItemBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.912"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view_kertas2"
-        app:layout_constraintVertical_bias="0.562"
-        app:srcCompat="@drawable/ic_gunting1" />
+        app:layout_constraintVertical_bias="0.562" />
 
     <ImageView
         android:id="@+id/view_ulang"
@@ -108,7 +114,7 @@
         app:srcCompat="@drawable/ic_baseline_refresh_24" />
 
     <ImageView
-        android:id="@+id/view_versus"
+        android:id="@+id/view_suitHasil"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_marginEnd="44dp"
