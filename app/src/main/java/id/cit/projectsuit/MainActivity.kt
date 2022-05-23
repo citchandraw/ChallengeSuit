@@ -37,7 +37,9 @@ class MainActivity : AppCompatActivity() {
         suitGunting1 = findViewById<ImageView>(R.id.view_gunting1)
         suitGunting2 = findViewById<ImageView>(R.id.view_gunting2)
 
-        val suitHasil = findViewById<ImageView>(R.id.view_suitHasil)
+        suitHasil = findViewById<ImageView>(R.id.view_suitHasil)
+
+        val reset =findViewById<ImageView>(R.id.iv_reset)
 
 
         suitBatu1.setOnClickListener {
@@ -70,27 +72,34 @@ class MainActivity : AppCompatActivity() {
             selectViewKedua(suitGunting2, pilihan = 2)
         }
 
+        reset.setOnClickListener {
+            clearVIewPertama()
+            clearVIewKedua()
+            suitHasil.setBackgroundResource(R.drawable.ic_vs)
+        }
     }
 
     private fun selectViewPertama(view: ImageView, pilihan: Int) {
         suitTerpilih1 = pilihan
-        clearAllVIewPertama()
+        clearVIewPertama()
         view.setImageResource(R.drawable.ic_baseline_done_24)
+        hasilSuit()
     }
 
     private fun selectViewKedua(view: ImageView, pilihan: Int) {
         suitTerpilih2 = pilihan
-        clearAllVIewKedua()
+        clearVIewKedua()
         view.setImageResource(R.drawable.ic_baseline_done_24)
+        hasilSuit()
     }
 
-    private fun clearAllVIewPertama() {
+    private fun clearVIewPertama() {
         suitBatu1.setImageResource(0)
         suitKertas1.setImageResource(0)
         suitGunting1.setImageResource(0)
     }
 
-    private fun clearAllVIewKedua() {
+    private fun clearVIewKedua() {
         suitBatu2.setImageResource(0)
         suitKertas2.setImageResource(0)
         suitGunting2.setImageResource(0)
@@ -99,7 +108,11 @@ class MainActivity : AppCompatActivity() {
     private fun hasilSuit() {
         if(suitTerpilih1 >=0 && suitTerpilih2 >=0) {
             if(suitTerpilih1 == suitBatu && suitTerpilih2 == suitKertas || suitTerpilih1 == suitKertas && suitTerpilih2 == suitGunting || suitTerpilih1 == suitGunting && suitTerpilih2 == suitBatu) {
-                suitHasil
+                suitHasil.setBackgroundResource(R.drawable.ic_pemain2);
+            }else if(suitTerpilih1 == suitBatu && suitTerpilih2 == suitGunting || suitTerpilih1 == suitKertas && suitTerpilih2 == suitBatu || suitTerpilih1 == suitGunting && suitTerpilih2 == suitKertas) {
+                suitHasil.setBackgroundResource(R.drawable.ic_pemain1);
+            }else if(suitTerpilih1 == suitBatu && suitTerpilih2 == suitBatu || suitTerpilih1 == suitKertas && suitTerpilih2 == suitKertas || suitTerpilih1 == suitGunting && suitTerpilih2 == suitGunting) {
+                suitHasil.setBackgroundResource(R.drawable.ic_draw);
             }
         }
     }
