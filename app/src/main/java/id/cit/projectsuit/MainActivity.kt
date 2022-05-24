@@ -82,7 +82,8 @@ class MainActivity : AppCompatActivity() {
     private fun selectViewPertama(view: ImageView, pilihan: Int) {
         suitTerpilih1 = pilihan
         clearVIewPertama()
-        view.setImageResource(R.drawable.ic_baseline_done_24)
+        //view.setImageResource(R.drawable.ic_baseline_done_24)
+        suitBatu1.setImageResource(R.drawable.ic_)
         hasilSuit()
     }
 
