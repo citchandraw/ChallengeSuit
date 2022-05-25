@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // <ImageView> bisa di hapus karna di atas sudah ada : lateinit var suitHasil : ImageView
         suitBatu1 = findViewById<ImageView>(R.id.view_batu1)
         suitBatu2 = findViewById<ImageView>(R.id.view_batu2)
         suitKertas1 = findViewById<ImageView>(R.id.view_kertas1)
@@ -43,6 +44,7 @@ class MainActivity : AppCompatActivity() {
 
 
         suitBatu1.setOnClickListener {
+            // plus poin untuk loggingnya, selalu biasakan log agar lebih mudah debug
             Log.d(MainActivity::class.java.simpleName, "Batu 1 Terpilih")
             selectViewPertama(suitBatu1, pilihan = 0)
         }
@@ -82,6 +84,7 @@ class MainActivity : AppCompatActivity() {
     private fun selectViewPertama(view: ImageView, pilihan: Int) {
         suitTerpilih1 = pilihan
         clearVIewPertama()
+        // ini ada bug karna ngeset langsung, lupa uncomment kah mas?
         //view.setImageResource(R.drawable.ic_baseline_done_24)
         suitBatu1.setImageResource(R.drawable.ic_)
         hasilSuit()

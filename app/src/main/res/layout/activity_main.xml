@@ -6,6 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!--  untuk layout sudah rapi,
+    mungkin bisa di improve ke depannya biar bisa dipake ke hp kecil/besar -->
+
     <ImageView
         android:id="@+id/view_judul"
         android:layout_width="300dp"
