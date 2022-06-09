@@ -74,7 +74,7 @@ class MainActivity : AppCompatActivity() {
         clearVIewPertama()
         // ini ada bug karna ngeset langsung, lupa uncomment kah mas?
         //view.setImageResource(R.drawable.ic_baseline_done_24)
-        view.setImageResource(R.drawable.ic_baseline_done_24)
+        view.setBackgroundResource(R.drawable.layout_bg)
         hasilSuit()
     }
 
@@ -84,24 +84,24 @@ class MainActivity : AppCompatActivity() {
         suitTerpilih2 = rnds
         clearVIewKedua()
         when(rnds) {
-           0 -> suitBatu2.setImageResource(R.drawable.ic_baseline_done_24)
-           1 -> suitKertas2.setImageResource(R.drawable.ic_baseline_done_24)
-           2 -> suitGunting2.setImageResource(R.drawable.ic_baseline_done_24)
+           0 -> suitBatu2.setBackgroundResource(R.drawable.layout_bg)
+           1 -> suitKertas2.setBackgroundResource(R.drawable.layout_bg)
+           2 -> suitGunting2.setBackgroundResource(R.drawable.layout_bg)
         }
 
         hasilSuit()
     }
 
     private fun clearVIewPertama() {
-        suitBatu1.setImageResource(0)
-        suitKertas1.setImageResource(0)
-        suitGunting1.setImageResource(0)
+        suitBatu1.setBackgroundResource(0)
+        suitKertas1.setBackgroundResource(0)
+        suitGunting1.setBackgroundResource(0)
     }
 
     private fun clearVIewKedua() {
-        suitBatu2.setImageResource(0)
-        suitKertas2.setImageResource(0)
-        suitGunting2.setImageResource(0)
+        suitBatu2.setBackgroundResource(0)
+        suitKertas2.setBackgroundResource(0)
+        suitGunting2.setBackgroundResource(0)
     }
 
     private fun hasilSuit() {
