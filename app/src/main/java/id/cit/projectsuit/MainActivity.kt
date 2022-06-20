@@ -30,46 +30,36 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        suitBatu1 = findViewById<ImageView>(R.id.view_batu1)
-        suitBatu2 = findViewById<ImageView>(R.id.view_batu2)
-        suitKertas1 = findViewById<ImageView>(R.id.view_kertas1)
-        suitKertas2 = findViewById<ImageView>(R.id.view_kertas2)
-        suitGunting1 = findViewById<ImageView>(R.id.view_gunting1)
-        suitGunting2 = findViewById<ImageView>(R.id.view_gunting2)
+        // <ImageView> bisa di hapus karna di atas sudah ada : lateinit var suitHasil : ImageView
+        suitBatu1 = findViewById(R.id.view_batu1)
+        suitBatu2 = findViewById(R.id.view_batu2)
+        suitKertas1 = findViewById(R.id.view_kertas1)
+        suitKertas2 = findViewById(R.id.view_kertas2)
+        suitGunting1 = findViewById(R.id.view_gunting1)
+        suitGunting2 = findViewById(R.id.view_gunting2)
 
-        suitHasil = findViewById<ImageView>(R.id.view_suitHasil)
+        suitHasil = findViewById(R.id.view_suitHasil)
 
         val reset =findViewById<ImageView>(R.id.iv_reset)
 
 
         suitBatu1.setOnClickListener {
+            // plus poin untuk loggingnya, selalu biasakan log agar lebih mudah debug
             Log.d(MainActivity::class.java.simpleName, "Batu 1 Terpilih")
             selectViewPertama(suitBatu1, pilihan = 0)
+            selectViewKedua()
         }
 
         suitKertas1.setOnClickListener {
             Log.d(MainActivity::class.java.simpleName, "Kertas 1 Terpilih")
             selectViewPertama(suitKertas1, pilihan = 1)
+            selectViewKedua()
         }
 
         suitGunting1.setOnClickListener {
             Log.d(MainActivity::class.java.simpleName, "Gunting 1 Terpilih")
             selectViewPertama(suitGunting1, pilihan = 2)
-        }
-
-        suitBatu2.setOnClickListener {
-            Log.d(MainActivity::class.java.simpleName, "Batu 2 Terpilih")
-            selectViewKedua(suitBatu2, pilihan = 0)
-        }
-
-        suitKertas2.setOnClickListener {
-            Log.d(MainActivity::class.java.simpleName, "Kertas 2 Terpilih")
-            selectViewKedua(suitKertas2, pilihan = 1)
-        }
-
-        suitGunting2.setOnClickListener {
-            Log.d(MainActivity::class.java.simpleName, "Gunting 2 Terpilih")
-            selectViewKedua(suitGunting2, pilihan = 2)
+            selectViewKedua()
         }
 
         reset.setOnClickListener {
@@ -82,28 +72,36 @@ class MainActivity : AppCompatActivity() {
     private fun selectViewPertama(view: ImageView, pilihan: Int) {
         suitTerpilih1 = pilihan
         clearVIewPertama()
+        // ini ada bug karna ngeset langsung, lupa uncomment kah mas?
         //view.setImageResource(R.drawable.ic_baseline_done_24)
-        suitBatu1.setImageResource(R.drawable.ic_)
+        view.setBackgroundResource(R.drawable.layout_bg)
         hasilSuit()
     }
 
-    private fun selectViewKedua(view: ImageView, pilihan: Int) {
-        suitTerpilih2 = pilihan
+    private fun selectViewKedua() {
+        val rnds = (0..2).random()
+
+        suitTerpilih2 = rnds
         clearVIewKedua()
-        view.setImageResource(R.drawable.ic_baseline_done_24)
+        when(rnds) {
+           0 -> suitBatu2.setBackgroundResource(R.drawable.layout_bg)
+           1 -> suitKertas2.setBackgroundResource(R.drawable.layout_bg)
+           2 -> suitGunting2.setBackgroundResource(R.drawable.layout_bg)
+        }
+
         hasilSuit()
     }
 
     private fun clearVIewPertama() {
-        suitBatu1.setImageResource(0)
-        suitKertas1.setImageResource(0)
-        suitGunting1.setImageResource(0)
+        suitBatu1.setBackgroundResource(0)
+        suitKertas1.setBackgroundResource(0)
+        suitGunting1.setBackgroundResource(0)
     }
 
     private fun clearVIewKedua() {
-        suitBatu2.setImageResource(0)
-        suitKertas2.setImageResource(0)
-        suitGunting2.setImageResource(0)
+        suitBatu2.setBackgroundResource(0)
+        suitKertas2.setBackgroundResource(0)
+        suitGunting2.setBackgroundResource(0)
     }
 
     private fun hasilSuit() {
